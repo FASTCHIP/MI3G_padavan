@@ -2,7 +2,7 @@
   This file is part of usb_modeswitch, a mode switching tool for controlling
   the mode of 'multi-state' USB devices
 
-  Version 2.5.1, 2017/08/06
+  Version 2.5.2, 2017/12/31
   Copyright (C) 2007 - 2017  Josua Dietze
 
   Config file parsing stuff borrowed from Guillaume Dargaud
@@ -64,7 +64,6 @@ void close_all();
 void abortExit();
 int readArguments(int argc, char **argv);
 void deviceDescription();
-int deviceInquire();
 void resetUSB();
 void release_usb_device(int dummy);
 int findMBIMConfig(int vendor, int product, int mode);

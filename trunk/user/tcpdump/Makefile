@@ -1,4 +1,4 @@
-SRC_NAME=tcpdump-4.4.0
+SRC_NAME=tcpdump-4.9.2
 
 CFLAGS += -Os -ffunction-sections -fdata-sections -DTCPDUMP_MINI
 LDFLAGS += -Wl,--gc-sections

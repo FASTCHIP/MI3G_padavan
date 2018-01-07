@@ -1,6 +1,6 @@
-SRC_NAME=libusb-0.1.12
+SRC_NAME=libusb-1.0.21
 
-all:	config_test
+all: config_test
 	$(MAKE) -C $(SRC_NAME)
 
 config_test:
@@ -12,12 +12,12 @@ config_test:
 
 configure:
 	( cd $(SRC_NAME) ; \
+	ac_cv_lib_rt_clock_gettime=no \
 	./configure \
 		--prefix=$(STAGEDIR) \
-		--enable-static \
-		--disable-shared \
-		--disable-build-docs \
-		--enable-debug=no \
+		--disable-static \
+		--disable-log \
+		--disable-udev \
 		--host=$(HOST_TARGET) \
 		--build=$(HOST_BUILD) ; \
 	)
@@ -32,4 +32,5 @@ install:
 	$(MAKE) -C $(SRC_NAME) install DESTDIR=""
 
 romfs:
+	cp -fP $(DESTDIR)/lib/libusb-1.0.so* $(ROMFSDIR)/lib
 

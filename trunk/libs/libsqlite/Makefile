@@ -1,4 +1,4 @@
-SRC_NAME=sqlite-autoconf-3070701
+SRC_NAME=sqlite-autoconf-3210000
 
 all: config_test
 	$(MAKE) -C $(SRC_NAME)
